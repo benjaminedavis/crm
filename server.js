@@ -6,6 +6,9 @@ var morgan = require('morgan');
 var mongoose = require('mongoose');
 var port = process.env.PORT || 8080;
 
+// connect to our database (hosted by mongolab)
+mongoose.connect('mongodb://bendavis:bendavis@ds031877.mongolab.com:31877/crm');
+
 // app configuration
 // use body-parser to grab info from post requests
 app.use(bodyParser.urlencoded({ extended: true }));
