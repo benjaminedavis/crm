@@ -92,14 +92,14 @@ apiRouter.route('/users')
 apiRouter.route('/users/:user_id')
 
       // get an individual user GET at http://localhost:8080/api/users/:user_id
-      .get(function(res, req) {
+      .get(function(req, res) {
             User.findById(req.params.user_id, function(err, user) {
                 if (err) res.send(err);
 
-
+                // return that user
                 res.json(user);
             });
-      })
+      });
 
 
 // Register our routes
